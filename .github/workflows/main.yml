@@ -3,7 +3,7 @@ on: workflow_dispatch
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: iac-eks
-  EKS_CLUSTER: iac-eks
+  #EKS_CLUSTER: terraform-iac-eks
 
 jobs:
   Testing:
@@ -62,6 +62,16 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      
+      - name: Create Jar File
+        run: mvn install
 
       - name: Build & Upload image to ECR
         uses: appleboy/docker-ecr-action@master
