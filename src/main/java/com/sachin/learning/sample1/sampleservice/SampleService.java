@@ -1,6 +1,6 @@
 package com.sachin.learning.sample1.sampleservice;
 
-import org.springframework.stereotype.Controller;
+//import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import com.sachin.learning.util.SampleUtilities;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-@Controller
+@RestController
 public class SampleService {
 	
 	@RequestMapping(path="/getMessage", method=RequestMethod.GET)
