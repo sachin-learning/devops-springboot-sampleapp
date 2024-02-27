@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: springboot-sampleapp
-        image: 861277171160.dkr.ecr.us-east-1.amazonaws.com/iac-eks:latest ###Dockerhub - sachinlearning/springboot-sampleapp:latest
+        ##image: 861277171160.dkr.ecr.us-east-1.amazonaws.com/iac-eks:latest ###Dockerhub - sachinlearning/springboot-sampleapp:latest
+        image: {{ .Values.appimage}}:{{ .Values.apptag}}
         ports:
         - name: sampleapp-port
           containerPort: 8080
