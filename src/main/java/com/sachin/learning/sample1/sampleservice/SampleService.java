@@ -17,7 +17,7 @@ public class SampleService {
 	
 	@RequestMapping(path="/getMessage", method=RequestMethod.GET)
 	public String getMessage() {
-		return "Sachin's Message";
+		return "Welcome to 2022";
 	}
 	
 	@RequestMapping(path="/getSimpleMessage")
@@ -33,6 +33,11 @@ public class SampleService {
 	@RequestMapping(path="/getUserAgent", method=RequestMethod.GET)
 	public String getUserAgent(@RequestHeader(value = "User-Agent") String userAgent, HttpServletRequest request) {
 		return "User Agent : " + userAgent + "<br> Browser : " + userAgent+ "<br> User IP : " + request.getRemoteAddr() + "<br><br> Client Info : + " + new SampleUtilities().printClientInfo(request);
+	}
+
+	@RequestMapping(path="/getMessageAndUserAgent", method=RequestMethod.GET)
+	public String getMessageAndUserAgent(@RequestHeader(value = "User-Agent") String userAgent, HttpServletRequest request) {
+		return "Welcome to 2022 <br><br> User Agent : " + userAgent + "<br> Browser : " + userAgent+ "<br> User IP : " + request.getRemoteAddr() + "<br><br> Client Info : + " + new SampleUtilities().printClientInfo(request);
 	}
 
 }
