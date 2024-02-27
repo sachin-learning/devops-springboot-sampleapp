@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-sampleapp
+  labels: 
+    app: springboot-sampleapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-sampleapp
+  template:
+    metadata:
+      labels:
+        app: springboot-sampleapp
+    spec:
+      containers:
+      - name: springboot-sampleapp
+        image: 861277171160.dkr.ecr.us-east-1.amazonaws.com/iac-eks:latest ###Dockerhub - sachinlearning/springboot-sampleapp:latest
+        ports:
+        - name: sampleapp-port
+          containerPort: 8080
