@@ -1,5 +1,12 @@
 name: devops-springbootsampleapp actions
-on: workflow_dispatch
+#on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+      - stage
+    paths:  
+      - src/**
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: iac-eks
