@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: ########Set this value to your DNS ####
+  - host: sachin.pratibhainfotech.com
     http:
       paths:
       - path: /
