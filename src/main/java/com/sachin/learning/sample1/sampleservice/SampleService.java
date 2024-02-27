@@ -17,7 +17,7 @@ public class SampleService {
 	
 	@RequestMapping(path="/getMessage", method=RequestMethod.GET)
 	public String getMessage() {
-		return "Sachin's Sample Message";
+		return "Sachin's Message";
 	}
 	
 	@RequestMapping(path="/getSimpleMessage")
