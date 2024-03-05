@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Fetch Code') {
             steps {
-                git credentialsId: "{$GITHUB_REPO_CREDENTIALS_ID}", branch: 'main', url: 'git@github.com:sachin-learning/devops-springboot-sampleapp.git'
+                git credentialsId: $GITHUB_REPO_CREDENTIALS_ID, branch: 'main', url: 'git@github.com:sachin-learning/devops-springboot-sampleapp.git'
             }
         }
         
