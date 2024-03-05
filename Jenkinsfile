@@ -10,12 +10,13 @@ pipeline {
         DOCKER_IMAGE_NAME = "sachinlearning/springboot-sampleapp"//"${env.DOCKER_IMAGE_NAME}"
         DOCKER_REGISTRY_URL = "https://registry.hub.docker.com" //"${env.DOCKER_REGISTRY_URL}"
         DOCKER_REGISTRY_CREDENTIALS = "Dockerhub"//"${env.DOCKER_REGISTRY_CREDENTIALS}"
+        GITHUB_REPO_CREDENTIALS_ID = "Github-sachin-learning"
     }
     
     stages {
         stage('Fetch Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/sachin-learning/devops-springboot-sampleapp.git'
+                git credentialsId: "{$GITHUB_REPO_CREDENTIALS_ID}", branch: 'main', url: 'git@github.com:sachin-learning/devops-springboot-sampleapp.git'
             }
         }
         
