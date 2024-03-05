@@ -22,7 +22,7 @@ public class SampleUtilities {
     }
 
     public String getReferer(HttpServletRequest request) {
-        final String referer = request.getHeader("referer");
+        final String referer = request.getHeader(request.getHeader("referer"));
         return referer;
     }
 
@@ -37,7 +37,6 @@ public class SampleUtilities {
         return result;
     }
 
-    //http://stackoverflow.com/a/18030465/1845894
     public String getClientIpAddr(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
         if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
@@ -58,7 +57,6 @@ public class SampleUtilities {
         return ip;
     }
 
-    //http://stackoverflow.com/a/18030465/1845894
     public String getClientOS(HttpServletRequest request) {
         final String browserDetails = request.getHeader("User-Agent");
 
@@ -79,7 +77,6 @@ public class SampleUtilities {
         }
     }
 
-    //http://stackoverflow.com/a/18030465/1845894
     public String getClientBrowser(HttpServletRequest request) {
         final String browserDetails = request.getHeader("User-Agent");
         final String user = browserDetails.toLowerCase();
