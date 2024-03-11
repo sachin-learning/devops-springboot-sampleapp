@@ -3,7 +3,6 @@ on: workflow_dispatch
 # on:
 #   push:
 #     branches:
-#       - main
 #       - stage
 #     paths:  
 #       - src/**
